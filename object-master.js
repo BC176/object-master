@@ -27,3 +27,35 @@ const pokémon = Object.freeze([
 //examples of filter and map provided by instructions
 const bListPkmn = pokémon.filter(p => p.name[0] === "B");
 const pkmnIds = pokémon.map(p => p.id);
+
+//1: return an arrray of pokemon objects where the id evenly divisible by 3
+const divideByThree = pokémon.filter(p => p.id % 3 === 0);
+console.log(divideByThree);
+
+//2: return an array of fire type pokemon
+const fireType = pokémon.filter(pkmn => pkmn.types[0] === "fire");
+console.log(fireType);
+
+//3: return an array where "types" > 1
+const moreThanOneType = pokémon.filter(x => x.types.length > 1);
+console.log(moreThanOneType);
+
+//4: return an array with just the names of the pokemon
+const justTheNames = pokémon.map(item => item.name);
+console.log(justTheNames);
+
+//5: return just the names of the pokemon with an greater than 99
+const idGreater = pokémon.filter(i => i.id > 99).map(i => i.name);
+console.log(idGreater);
+
+//6: return just the names of the pokemon whose Only type is poison
+const onlyPoison = pokémon.filter(x => x.types.length === 1 && x.types[0] === "poison").map(x => x.name);
+console.log(onlyPoison);
+
+//7: return just the first type of all pokemon whose second type is flying
+const onlyFlying = pokémon.filter(p => p.types.length === 2 && p.types[1] === "flying").map(p => p.name);
+console.log(onlyFlying);
+
+//8: return a count of pokemon that are normal type
+const normalCount = pokémon.filter(p => p.types.includes('normal')).map(p => p.name);
+console.log(normalCount);
